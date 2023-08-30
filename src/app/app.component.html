@@ -1,0 +1,26 @@
+<h2>{{title}}</h2>
+<h1>{{aboutus}}</h1>
+<nav>
+  <a routerLink="/">Dashboard</a>
+  <a routerLink="/about">about</a>
+  <a routerLink="/heroes">Heroes</a>
+</nav>
+<div class="">
+  <app-aboutus [myinputmsg] ="myInputMessage" (myOutput) ="GetChildData($event)"></app-aboutus>
+</div>
+<h1>{{title}}</h1>
+
+<div class="name">
+  <div>
+    <h2>Data:</h2>
+    <ul>
+      <!-- <li>{{customers[0].email}}</li> -->
+      <li *ngFor="let item of customers">{{item.user_name}}</li>
+    </ul>
+  </div>
+</div>
+
+
+<app-heroes></app-heroes>
+<app-messages></app-messages>
+<router-outlet></router-outlet>
